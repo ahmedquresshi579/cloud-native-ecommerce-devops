@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopCloud — Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🛒 ShopCloud</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="user.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Welcome to ShopCloud</h1>
+    <p>A cloud-native e-commerce platform built with modern DevOps practices.</p>
+    <a href="products.html" class="btn-primary">Browse Products</a>
+  </header>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>🐳 Containerized</h3>
+      <p>All services run in Docker containers for consistent, reproducible deployments.</p>
+    </div>
+    <div class="feature-card">
+      <h3>⚙️ CI/CD Pipeline</h3>
+      <p>Automated builds, tests, and deployments using GitHub Actions and Jenkins.</p>
+    </div>
+    <div class="feature-card">
+      <h3>☸️ Kubernetes Ready</h3>
+      <p>Orchestrated with Kubernetes for zero-downtime rolling updates and autoscaling.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔒 Secure by Default</h3>
+      <p>Secrets managed via GitHub Environments and Kubernetes ConfigMaps.</p>
+    </div>
+  </section>
+
+  <section class="pipeline-section">
+    <h2>Our DevOps Pipeline</h2>
+    <div class="pipeline">
+      <div class="pipeline-step">Code Push</div>
+      <span class="arrow">→</span>
+      <div class="pipeline-step">CI Lint &amp; Build</div>
+      <span class="arrow">→</span>
+      <div class="pipeline-step">Docker Build</div>
+      <span class="arrow">→</span>
+      <div class="pipeline-step">Push to Registry</div>
+      <span class="arrow">→</span>
+      <div class="pipeline-step">Deploy</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>ShopCloud &copy; 2025 — Cloud-Native Microservices Project</p>
+  </footer>
+</body>
+</html>
