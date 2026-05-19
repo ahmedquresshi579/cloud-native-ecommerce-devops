@@ -1,0 +1,148 @@
+.page-header {
+  background: #0f3460;
+  color: white;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.page-header p {
+  color: #a8b2d8;
+}
+
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #0f3460;
+}
+
+.search-bar select {
+  padding: 0.7rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #16213e;
+  color: #64ffda;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-badge.cloud { background: #0f3460; color: #64c8ff; }
+.product-badge.security { background: #2d1b4e; color: #c084fc; }
+
+.product-icon {
+  font-size: 2.5rem;
+}
+
+.product-card h3 {
+  font-size: 1.05rem;
+  color: #0f3460;
+  margin-top: 0.2rem;
+}
+
+.product-card p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #16213e;
+}
+
+.btn-cart {
+  background: #16213e;
+  color: #64ffda;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cart:hover {
+  background: #0f3460;
+}
+
+.cart-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #16213e;
+  color: #64ffda;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.cart-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
