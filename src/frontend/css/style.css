@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a2e;
+  background: #f5f7fa;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #16213e;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #a8b2d8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #64ffda;
+}
+
+.hero {
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #a8b2d8;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: #64ffda;
+  color: #16213e;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #52e3c2;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #0f3460;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pipeline-section {
+  background: #16213e;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.pipeline-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #64ffda;
+}
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pipeline-step {
+  background: #0f3460;
+  border: 1px solid #64ffda;
+  color: #64ffda;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.arrow {
+  color: #a8b2d8;
+  font-size: 1.3rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #16213e;
+  color: #a8b2d8;
+  font-size: 0.85rem;
+}
