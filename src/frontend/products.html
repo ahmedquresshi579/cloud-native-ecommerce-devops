@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopCloud — Products</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/products.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🛒 ShopCloud</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="user.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Product Catalog</h1>
+    <p>Browse our collection of cloud-native merchandise</p>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" />
+    <select id="categoryFilter" onchange="filterProducts()">
+      <option value="">All Categories</option>
+      <option value="DevOps">DevOps</option>
+      <option value="Cloud">Cloud</option>
+      <option value="Security">Security</option>
+    </select>
+  </div>
+
+  <main class="product-grid" id="productGrid">
+    <div class="product-card" data-category="DevOps">
+      <div class="product-badge">DevOps</div>
+      <div class="product-icon">🐳</div>
+      <h3>Docker Starter Kit</h3>
+      <p>Everything you need to containerize your applications.</p>
+      <div class="product-price">$49.99</div>
+      <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product-card" data-category="Cloud">
+      <div class="product-badge cloud">Cloud</div>
+      <div class="product-icon">☁️</div>
+      <h3>Kubernetes Bundle</h3>
+      <p>Orchestrate your containers at scale with ease.</p>
+      <div class="product-price">$89.99</div>
+      <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product-card" data-category="DevOps">
+      <div class="product-badge">DevOps</div>
+      <div class="product-icon">⚙️</div>
+      <h3>CI/CD Pipeline Pack</h3>
+      <p>Automate your builds, tests, and deployments.</p>
+      <div class="product-price">$34.99</div>
+      <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product-card" data-category="Security">
+      <div class="product-badge security">Security</div>
+      <div class="product-icon">🔐</div>
+      <h3>Secrets Manager Pro</h3>
+      <p>Manage credentials and secrets across all environments.</p>
+      <div class="product-price">$59.99</div>
+      <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product-card" data-category="Cloud">
+      <div class="product-badge cloud">Cloud</div>
+      <div class="product-icon">📊</div>
+      <h3>Monitoring Stack</h3>
+      <p>Prometheus + Grafana for full observability.</p>
+      <div class="product-price">$74.99</div>
+      <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product-card" data-category="DevOps">
+      <div class="product-badge">DevOps</div>
+      <div class="product-icon">🔄</div>
+      <h3>GitOps Workflow</h3>
+      <p>Git-based deployment and infrastructure management.</p>
+      <div class="product-price">$29.99</div>
+      <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+  </main>
+
+  <div class="cart-toast" id="cartToast">✓ Added to cart!</div>
+
+  <footer>
+    <p>ShopCloud &copy; 2025 — Product Service</p>
+  </footer>
+
+  <script>
+    function filterProducts() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const category = document.getElementById('categoryFilter').value;
+      document.querySelectorAll('.product-card').forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const cat = card.dataset.category;
+        const matchQuery = title.includes(query);
+        const matchCat = category === '' || cat === category;
+        card.style.display = matchQuery && matchCat ? 'flex' : 'none';
+      });
+    }
+
+    function addToCart(btn) {
+      btn.textContent = 'Added ✓';
+      btn.style.background = '#52e3c2';
+      const toast = document.getElementById('cartToast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+        btn.textContent = 'Add to Cart';
+        btn.style.background = '';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
